@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "build:withsw": "vite build && npx workbox generateSW workbox-config.cjs",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -15,9 +16,12 @@
   "dependencies": {
     "@vueuse/rxjs": "^12.2.0",
     "dexie": "^4.0.10",
+    "dexie-cloud-addon": "^4.0.8",
     "rxjs": "^7.8.1",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "workbox-build": "^7.3.0",
+    "workbox-cli": "^7.3.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
